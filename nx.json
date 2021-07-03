@@ -32,7 +32,7 @@
       "implicitDependencies": ["frontend-admin","type:app"]
     },
     "backend-api": {
-      "tags": ["type:app"]
+      "tags": ["type:app", "scope:backend-api"]
     },
     "client-e2e": {
       "tags": [],
