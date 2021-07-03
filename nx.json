@@ -29,11 +29,14 @@
   "projects": {
     "admin-e2e": {
       "tags": [],
-      "implicitDependencies": ["frontend-admin"]
+      "implicitDependencies": ["frontend-admin","type:app"]
+    },
+    "backend-api": {
+      "tags": ["type:app"]
     },
     "client-e2e": {
       "tags": [],
-      "implicitDependencies": ["frontend-client"]
+      "implicitDependencies": ["frontend-client","type:app"]
     },
     "frontend-admin": {
       "tags": ["scope:frontend-admin"]
