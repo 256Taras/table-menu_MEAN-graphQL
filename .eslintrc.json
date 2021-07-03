@@ -13,8 +13,12 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "sourceTag": "scope:fronend-client",
+                "onlyDependOnLibsWithTags": ["scope:fronend-client"]
+              },
+              {
+                "sourceTag": "scope:fronend-admin",
+                "onlyDependOnLibsWithTags": ["scope:fronend-admin"]
               }
             ]
           }
