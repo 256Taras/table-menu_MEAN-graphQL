@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
 
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
+
 import {ConfigModule, ConfigService} from "@nestjs/config";
 import {TypeOrmModule} from "@nestjs/typeorm";
 import {environment} from "../environments/environment";
+import {GraphQLModule} from "@nestjs/graphql";
+import {AppResolver} from "./app.resolver";
 
 @Module({
   imports: [
@@ -19,8 +21,13 @@ import {environment} from "../environments/environment";
         }
       }
     ),
+    GraphQLModule.forRoot({
+      typePaths:['./**/*.graphql'],
+      context:({req})=>({req}),
+      playground:true
+    })
 ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppResolver],
 })
 export class AppModule {}
