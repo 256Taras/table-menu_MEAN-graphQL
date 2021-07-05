@@ -9,16 +9,12 @@
     "frontend-client:start": "ng serve frontend-client",
     "frontend-client:build": "ng build frontend-client",
     "frontend-client:test": "ng test frontend-client",
-
     "frontend-admin:start": "ng serve  frontend-admin",
     "frontend-admin:build": "ng build frontend-admin",
     "frontend-admin:test": "ng test frontend-admin",
-
-
     "backend-api:start": "ng serve backend-api",
     "backend-api:build": "ng build backend-api",
     "backend-api:test": "ng test backend-api",
-
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
@@ -53,9 +49,13 @@
     "@nestjs/common": "^7.0.0",
     "@nestjs/config": "^0.6.3",
     "@nestjs/core": "^7.0.0",
+    "@nestjs/graphql": "^7.11.0",
     "@nestjs/platform-express": "^7.0.0",
     "@nestjs/typeorm": "^7.1.5",
     "@nrwl/angular": "12.5.2",
+    "apollo-server-express": "^2.25.2",
+    "graphql": "^15.5.1",
+    "graphql-tools": "^7.0.5",
     "pg": "^8.6.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.6.0",
