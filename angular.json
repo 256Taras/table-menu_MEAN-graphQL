@@ -226,6 +226,7 @@
       "prefix": "mean",
       "architect": {
         "build": {
+
           "builder": "@angular-devkit/build-angular:browser",
           "outputs": [
             "{options.outputPath}"
