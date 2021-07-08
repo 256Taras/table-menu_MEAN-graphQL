@@ -32,17 +32,20 @@
       "implicitDependencies": ["frontend-admin"]
     },
     "backend-api": {
-      "tags": ["type:app", "scope:backend-api","type:app"]
+      "tags": ["type:app", "scope:backend-api", "type:app"]
     },
     "client-e2e": {
       "tags": [],
       "implicitDependencies": ["frontend-client"]
     },
     "frontend-admin": {
-      "tags": ["scope:frontend-admin","type:app"]
+      "tags": ["scope:frontend-admin", "type:app"]
     },
     "frontend-client": {
-      "tags": ["scope:frontend-client","type:app"]
+      "tags": ["scope:frontend-client", "type:app"]
+    },
+    "ui-component": {
+      "tags": [ "type:lib","scope:ui-lib" ]
     }
   }
 }
