@@ -4,5 +4,6 @@ module.exports = {
     '<rootDir>/apps/frontend/admin',
     '<rootDir>/apps/backend/api',
     '<rootDir>/libs/ui-component',
+    '<rootDir>/libs/shared/data-access/interfaces',
   ],
 };

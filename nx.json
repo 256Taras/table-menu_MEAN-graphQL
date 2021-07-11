@@ -44,8 +44,11 @@
     "frontend-client": {
       "tags": ["scope:frontend-client", "type:app"]
     },
+    "shared-data-access-interfaces": {
+      "tags": []
+    },
     "ui-component": {
-      "tags": [ "type:lib","scope:ui-lib" ]
+      "tags": ["type:lib", "scope:ui-lib"]
     }
   }
 }
