@@ -1,0 +1,4 @@
+# Declarete common scalar type
+scalar Date
+scalar JSON
+scalar Upload
