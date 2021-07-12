@@ -1,44 +1,51 @@
 /**
  * interface user
- * @description
  *
  * provides an entity interface user
  */
 export class IUser {
   /**
-   * @description
    * user ID
    */
   id: number;
 
   /**
-   * @description
-   * user ID
+   * user email
    */
   email: string;
 
   /**
-   * @description
    * user ID
    */
   password: string;
-  phone?: string;
+
 
   /**
-   * @description
-   * user ID
+   * user phone (optional)
+   */
+  phone?: string;
+
+
+  /**
+   *user name
+   */
+  username: string;
+
+
+  /**
+   *user nick (option)
+   */
+  nickname?: string;
+
+
+  /**
+   * user created date
    */
   created: string;
 
-  /**
-   * @description
-   * user ID
-   */
-  updated: string;
 
   /**
-   * @description
-   * user ID
+   * user updated date
    */
-  username: string;
+  updated: string;
 }
