@@ -19,6 +19,18 @@
               {
                 "sourceTag": "scope:fronend-admin",
                 "onlyDependOnLibsWithTags": ["scope:fronend-admin"]
+              },
+              {
+                "sourceTag": "lib-type:feature",
+                "onlyDependOnLibsWithTags": ["lib-type:data-access", "lib-type:utils", "lib-type:feature","lib-type:ui"]
+              },
+              {
+                "sourceTag": "lib-type:ui",
+                "onlyDependOnLibsWithTags": ["lib-type:ui", "lib-type:utils"]
+              },
+              {
+                "sourceTag": "lib-type:utils",
+                "onlyDependOnLibsWithTags": ["lib-type:ui"]
               }
             ]
           }
