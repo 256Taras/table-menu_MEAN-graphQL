@@ -1,36 +1,28 @@
 import {Module} from '@nestjs/common';
-
-import {AppController} from './app.controller';
-
-import {ConfigModule, ConfigService} from "@nestjs/config";
-import {TypeOrmModule} from "@nestjs/typeorm";
-import {environment} from "../environments/environment";
 import {GraphQLModule} from "@nestjs/graphql";
-import {AppResolver} from "./app.resolver";
-import { AuthModule } from './auth/auth.module';
+import {TypeOrmModule} from "@nestjs/typeorm";
+
+import {environment} from "../environments/environment";
+import {AppController} from './app.controller';
+import {AuthModule} from './auth/auth.module';
+import {UserEntity} from './users/entities/user.entity';
+import {resolverMap} from "./app.resolver";
 
 @Module({
   imports: [
-    ConfigModule.forRoot({
-      isGlobal: true,
+    TypeOrmModule.forRoot({
+      ...environment.connection,
+      entities: [UserEntity],
     }),
-    TypeOrmModule.forRootAsync({
-        imports: [ConfigModule],
-        inject: [ConfigService],
-        useFactory: (configService: ConfigService) => {
-          return environment.connection(configService)
-        }
-      }
-    ),
     GraphQLModule.forRoot({
       typePaths: ['./**/*.graphql'],
       context: ({req}) => ({req}),
-      playground: true
+      playground: true,
+      resolvers: [resolverMap],
     }),
     AuthModule,
   ],
   controllers: [AppController],
-  providers: [AppResolver],
 })
 export class AppModule {
 }
