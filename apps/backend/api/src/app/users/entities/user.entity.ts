@@ -1,4 +1,4 @@
-import {IUser} from "@mean/shared/data-access/interfaces";
+import type {IUser} from "@mean/shared/data-access/interfaces";
 import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
 
 @Entity({name: 'users'})

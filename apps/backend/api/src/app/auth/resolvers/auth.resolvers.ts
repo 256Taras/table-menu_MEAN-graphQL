@@ -3,7 +3,7 @@ import {Query, Resolver} from "@nestjs/graphql";
 import {AuthService} from "../services/auth.service";
 import {SingIn} from "../decorators/auth.decorator";
 
-import {ISignAuthResponse, ISingAuth} from "@mean/shared/data-access/interfaces";
+import type {ISignAuthResponse, ISingAuth} from "@mean/shared/data-access/interfaces";
 
 @Resolver('Auth')
 export class AuthResolvers {
