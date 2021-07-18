@@ -14,7 +14,8 @@
       "Default GraphQL Endpoint": {
         "url": "http://localhost:3333/graphql",
         "headers": {
-          "user-agent": "JS GraphQL"
+          "user-agent": "JS GraphQL",
+          "authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwidXNlcklkIjoxLCJpYXQiOjE2MjY2MDM1NTUsImV4cCI6MTYyNzk0OTE5OH0.9-XjhtVWFahoFw7onBJPfiLLtLVGRDAytjplUY6FJKc"
         },
         "introspect": false
       }

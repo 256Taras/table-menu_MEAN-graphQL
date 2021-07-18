@@ -5,7 +5,7 @@ import {JwtService} from "@nestjs/jwt";
 import {UserService} from "../../users/services/user.service";
 import {PasswordService} from "./password.service";
 import {UserEntity} from "../../users/entities/user.entity";
-import { environment } from "../../../environments/environment";
+import {environment} from "../../../environments/environment";
 
 
 @Injectable()
@@ -34,16 +34,15 @@ export class AuthService {
 
   public async login(signInPayload: ISingAuth): Promise<ISignAuthResponse> {
     const user = await this.validateUser(signInPayload.username, signInPayload.password)
-
     if (!user) {
       throw new UnauthorizedException()
     }
 
     const payload = {username: user.username, userId: user.id}
-
+    const eIn = new Date(environment.jwt.expiresIn).getDate()
     return {
       accessToken: this.jwtService.sign(payload),
-      expiresIn: new Date(environment.jwt.expiresIn).getDate(),
+      expiresIn: eIn,
       id: user.id,
     }
   }
