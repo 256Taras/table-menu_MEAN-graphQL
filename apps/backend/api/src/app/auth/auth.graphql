@@ -1,0 +1,10 @@
+extend type Query{
+  login(username:String,password:String):SingInresponce
+  logout:Boolean
+}
+
+type SingInresponce {
+  accessToken:String
+  expiresIn:Int
+  id:Int
+}

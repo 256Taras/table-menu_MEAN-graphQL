@@ -9,7 +9,8 @@ import {UiComponentModule} from "@mean/ui-component";
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    UiComponentModule
+    UiComponentModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],
