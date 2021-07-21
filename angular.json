@@ -131,6 +131,16 @@
       "sourceRoot": "apps/frontend/admin/src",
       "prefix": "mean",
       "architect": {
+        "compodoc": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "npx compodoc -p apps/frontend/admin/tsconfig.compodoc.json --theme vagrant -r 8085 -d docs/admin/"
+              }
+            ]
+          }
+        },
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "outputs": [
@@ -235,6 +245,16 @@
       "sourceRoot": "apps/frontend/client/src",
       "prefix": "mean",
       "architect": {
+        "compodoc": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "npx compodoc -p apps/frontend/client/tsconfig.compodoc.json --theme vagrant -r 8085 -d docs/client/"
+              }
+            ]
+          }
+        },
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "outputs": [
