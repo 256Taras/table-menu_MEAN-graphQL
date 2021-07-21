@@ -1,12 +1,12 @@
-extend type Query{
+extend type Query {
   "It's login query demo description"
   login(
     "Username it's name current user"
-    username:String,
-    "password it's password current user"
-    password:String
-  ):SingInresponce
-  logout:Boolean
+    username: String!,
+    "password it's password"
+    password: String!
+  ): SignInResponse
+  logout: Boolean
 }
 
 
