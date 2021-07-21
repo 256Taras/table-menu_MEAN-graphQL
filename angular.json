@@ -34,6 +34,16 @@
       "sourceRoot": "apps/backend/api/src",
       "projectType": "application",
       "architect": {
+        "compodoc": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "npx compodoc -p apps/backend/api/tsconfig.app.json --theme vagrant -r 8085 -d docs/api/"
+              }
+            ]
+          }
+        },
         "build": {
           "builder": "@nrwl/node:build",
           "outputs": [
@@ -121,6 +131,16 @@
       "sourceRoot": "apps/frontend/admin/src",
       "prefix": "mean",
       "architect": {
+        "compodoc": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "npx compodoc -p apps/frontend/admin/tsconfig.compodoc.json --theme vagrant -r 8085 -d docs/admin/"
+              }
+            ]
+          }
+        },
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "outputs": [
@@ -225,6 +245,16 @@
       "sourceRoot": "apps/frontend/client/src",
       "prefix": "mean",
       "architect": {
+        "compodoc": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "npx compodoc -p apps/frontend/client/tsconfig.compodoc.json --theme vagrant -r 8085 -d docs/client/"
+              }
+            ]
+          }
+        },
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "outputs": [
@@ -324,6 +354,82 @@
           "options": {
             "jestConfig": "apps/frontend/client/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-data-access-interfaces": {
+      "root": "libs/shared/data-access/interfaces",
+      "sourceRoot": "libs/shared/data-access/interfaces/src",
+      "projectType": "library",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/libs/shared/data-access/interfaces",
+            "tsConfig": "libs/shared/data-access/interfaces/tsconfig.lib.json",
+            "packageJson": "libs/shared/data-access/interfaces/package.json",
+            "main": "libs/shared/data-access/interfaces/src/index.ts",
+            "assets": [
+              "libs/shared/data-access/interfaces/*.md"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/data-access/interfaces/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/shared/data-access/interfaces"
+          ],
+          "options": {
+            "jestConfig": "libs/shared/data-access/interfaces/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-component": {
+      "projectType": "library",
+      "root": "libs/ui-component",
+      "sourceRoot": "libs/ui-component/src",
+      "prefix": "mean",
+      "architect": {
+        "build": {
+          "options": {
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "ws-styles"
+              ]
+            }
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/ui-component"
+          ],
+          "options": {
+            "jestConfig": "libs/ui-component/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui-component/src/**/*.ts",
+              "libs/ui-component/src/**/*.html"
+            ]
           }
         }
       }

@@ -12,7 +12,8 @@ async function bootstrap() {
   app.setGlobalPrefix(globalPrefix)
   const port = process.env.API_PORT || 3333
   await app.listen(port, () => {
-    Logger.log('Listening at http://localhost:' + port + '/' + globalPrefix)
+    Logger.log('Listening at http://localhost:' + port + '/' + globalPrefix, globalPrefix ),
+    Logger.log('Go to graphql  http://localhost:' + port + '/' + 'graphql' )
   })
 }
 

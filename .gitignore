@@ -1,10 +1,11 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
-
+/docs
 # compiled output
 /dist
 /tmp
 /out-tsc
-
+/docs-temp
+/docs
 # dependencies
 /node_modules
 
