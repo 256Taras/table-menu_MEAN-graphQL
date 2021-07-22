@@ -13,4 +13,4 @@ This project was generated using [Nx](https://nx.dev).
 [frontend-client documentation](https://ezen1programmer.github.io/table-menu_MEAN-graphQL/client/)
 
 #Tags
-v0.01 init mean ws with backend-api frontend client && admin
+v0.01 init Table menu ws with backend-api frontend client && admin
