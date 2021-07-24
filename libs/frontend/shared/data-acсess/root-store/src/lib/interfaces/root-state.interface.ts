@@ -6,5 +6,5 @@ export interface IRootState {
   /**
    * Router state
    */
-  router:RouterReducerState<IRouterUrlState>
+  router:RouterReducerState<IRouterUrlState> | null
 }
