@@ -44,7 +44,7 @@
     "frontend-client": {
       "tags": ["scope:frontend-client", "type:app"]
     },
-    "frontend-shared-data-acсess-root-store": {
+    "frontend-shared-data-access-root-store": {
       "tags": ["type:lib", "scope:shared", "lib-type:data-access"]
     },
     "shared-data-access-interfaces": {

@@ -392,17 +392,17 @@
         }
       }
     },
-    "frontend-shared-data-acсess-root-store": {
+    "frontend-shared-data-access-root-store": {
       "projectType": "library",
-      "root": "libs/frontend/shared/data-acсess/root-store",
-      "sourceRoot": "libs/frontend/shared/data-acсess/root-store/src",
+      "root": "libs/frontend/shared/data-access/root-store",
+      "sourceRoot": "libs/frontend/shared/data-access/root-store/src",
       "prefix": "mean",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/frontend/shared/data-acсess/root-store"],
+          "outputs": ["coverage/libs/frontend/shared/data-access/root-store"],
           "options": {
-            "jestConfig": "libs/frontend/shared/data-acсess/root-store/jest.config.js",
+            "jestConfig": "libs/frontend/shared/data-access/root-store/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -410,8 +410,8 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/frontend/shared/data-acсess/root-store/src/**/*.ts",
-              "libs/frontend/shared/data-acсess/root-store/src/**/*.html"
+              "libs/frontend/shared/data-access/root-store/src/**/*.ts",
+              "libs/frontend/shared/data-access/root-store/src/**/*.html"
             ]
           }
         }

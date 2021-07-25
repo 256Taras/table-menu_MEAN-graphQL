@@ -4,7 +4,9 @@ import { Injectable } from '@angular/core';
 import { RouterStateSnapshot } from '@angular/router';
 
 @Injectable()
-export class StoreRouterStateSerializer implements RouterStateSerializer<IRouterUrlState>{
+export class StoreRouterStateSerializer
+  implements RouterStateSerializer<IRouterUrlState>
+{
   serialize(routerState: RouterStateSnapshot): IRouterUrlState {
     let route = routerState.root;
 

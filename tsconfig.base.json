@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@mean/frontend/shared/data-acсess/root-store": [
-        "libs/frontend/shared/data-acсess/root-store/src/index.ts"
+      "@mean/frontend/shared/data-access/root-store": [
+        "libs/frontend/shared/data-access/root-store/src/index.ts"
       ],
       "@mean/shared/data-access/interfaces": [
         "libs/shared/data-access/interfaces/src/index.ts"
