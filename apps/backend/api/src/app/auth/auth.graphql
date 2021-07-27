@@ -15,7 +15,7 @@ Demo
 multi-line
 
 """
-type SingInresponce {
+type SignInResponse {
   accessToken:String
   expiresIn:Int
   id:Int

@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
-import { RootStoreModule } from '@mean/frontend/shared/data-access/root-store';
+import {  HttpClientModule } from '@angular/common/http';
 
-
+import {TransferHttpCacheModule} from '@nguniversal/common';
 
 @NgModule({
-  declarations: [AppComponent],
+
   imports: [
     BrowserModule.withServerTransition({ appId: 'TM-clint' }),
-    RootStoreModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
+    HttpClientModule,
+    BrowserTransferStateModule,
+    TransferHttpCacheModule
   ],
-  providers: [],
+  providers: [
+
+  ],
 })
 export class AppModule {}
