@@ -3,7 +3,7 @@
  *
  * provides an entity interface user
  */
-export class IUser {
+export interface IUser {
   /**
    * user ID
    */
