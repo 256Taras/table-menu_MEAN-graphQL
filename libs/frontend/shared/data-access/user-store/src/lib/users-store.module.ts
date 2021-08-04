@@ -18,7 +18,7 @@ import { IUserApollo } from './interfaces/user-apollo.interface';
   ],
 })
 export class UsersStoreModule {
-  static forRoot(options: IUserStoreOptions): ModuleWithProviders<UsersStoreModule> {
+  static forRoot(options: IUserStoreOptions ): ModuleWithProviders<UsersStoreModule> {
     return {
       ngModule: UsersStoreModule,
       providers: [
@@ -30,7 +30,6 @@ export class UsersStoreModule {
           provide: IUserApollo,
           useClass: options.facade,
         },
-
       ],
     }
   }
