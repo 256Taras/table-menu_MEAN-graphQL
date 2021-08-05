@@ -9,15 +9,16 @@ export interface IApolloRequest {
   /**
    * Request entity keys
    */
-  keys?: string;
+  keys?: string[];
   /**
    * Apollo request query
    */
   query: DocumentNode;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 export type TApolloResponse<
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   T = any,
   R extends ApolloError = ApolloError
 > = Observable<T | R>;
