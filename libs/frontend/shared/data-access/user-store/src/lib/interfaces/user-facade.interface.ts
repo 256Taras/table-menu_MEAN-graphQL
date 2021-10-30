@@ -11,7 +11,7 @@ export abstract class IUserFacade {
   /**
    *  User entity observer
    */
-  public user$?: Observable<IUser>;
+  public user$!: Observable<IUser>;
 
   /**
    * User load run observable
