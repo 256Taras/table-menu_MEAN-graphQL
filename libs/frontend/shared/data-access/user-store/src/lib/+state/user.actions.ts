@@ -1,11 +1,10 @@
 import { createAction } from '@ngrx/store';
 import { ApolloError } from '@apollo/client';
 
-import { UserTypes } from './user.action-types';
 import { payload, payloadForce } from '@mean/shared/utils/store';
 import { IUser } from '@mean/shared/utils/interfaces';
 
-
+import { UserTypes } from './user.action-types';
 
 export const loadUser = createAction(UserTypes.LoadUser, payloadForce())
 export const loadUserCancel = createAction(UserTypes.LoadUserCancel)
