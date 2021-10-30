@@ -3,12 +3,15 @@ import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import * as fromUser from './+state/user.reducer';
-
-import { UserEffects } from './+state/user.effects';
-import { IUserStoreOptions } from './interfaces/user-store-option.interface';
 import { IUserApollo } from './interfaces/user-apollo.interface';
 import { IUserFacade } from './interfaces/user-facade.interface';
+import { IUserStoreOptions } from './interfaces/user-store-option.interface';
+
+import * as fromUser from './+state/user.reducer';
+import { UserEffects } from './+state/user.effects';
+import { UserFacade } from './+state/user.facade';
+
+import { UserApolloService } from './services/user-apollo.service';
 
 @NgModule({
   imports: [
@@ -24,11 +27,11 @@ export class UsersStoreModule {
       providers: [
         {
           provide: IUserApollo,
-          useClass: options.apollo,
+          useClass: options.apollo || UserApolloService,
         },
         {
           provide: IUserFacade,
-          useClass: options.facade,
+          useClass: options.facade || UserFacade,
         },
       ],
     }
