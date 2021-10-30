@@ -1,14 +1,14 @@
-import { createAction, props } from '@ngrx/store';
-import { UserEntity } from './user.models';
+import { createAction } from '@ngrx/store';
+import { ApolloError } from '@apollo/client';
 
-export const init = createAction('[User Page] Init');
+import { payload, payloadForce } from '@mean/shared/utils/store';
+import { IUser } from '@mean/shared/utils/interfaces';
 
-export const loadUserSuccess = createAction(
-  '[User/API] Load User Success',
-  props<{ user: UserEntity[] }>()
-);
+import { UserTypes } from './user.action-types';
 
-export const loadUserFailure = createAction(
-  '[User/API] Load User Failure',
-  props<{ error: any }>()
-);
+export const loadUser = createAction(UserTypes.LoadUser, payloadForce())
+export const loadUserCancel = createAction(UserTypes.LoadUserCancel)
+export const loadUserRun = createAction(UserTypes.LoadUserRun)
+export const loadUserSuccess = createAction(UserTypes.LoadUserSuccess, payload<IUser>())
+export const loadUserFailure = createAction(UserTypes.LoadUserFailure, payload<ApolloError>())
+

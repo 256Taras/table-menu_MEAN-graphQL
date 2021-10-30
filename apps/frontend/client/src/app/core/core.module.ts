@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
+import { NxModule } from '@nrwl/angular';
+import { APOLLO_OPTIONS } from 'apollo-angular';
+import { HttpLink } from 'apollo-angular/http';
+import { RouterModule } from '@angular/router';
+
+import { RootStoreModule } from '@mean/frontend/shared/data-access/root-store';
 
 import { AppComponent } from './comonents/app/app.component';
-import { NxModule } from '@nrwl/angular';
-import { RootStoreModule } from '@mean/frontend/shared/data-access/root-store';
-import { RouterModule } from '@angular/router';
-import { APOLLO_OPTIONS } from 'apollo-angular';
+
 import { createApollo } from './utils/create-apollo';
-import { HttpLink } from 'apollo-angular/http';
 
 
 @NgModule({
