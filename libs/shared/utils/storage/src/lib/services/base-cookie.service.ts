@@ -1,115 +1,117 @@
-import { REQUEST, RESPONSE } from '@nguniversal/express-engine/tokens';
-import { Inject, Injectable, Optional, PLATFORM_ID } from '@angular/core';
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { Request, Response } from 'express';
+import {Inject, Injectable, Optional, PLATFORM_ID} from '@angular/core'
+import {REQUEST, RESPONSE} from '@nguniversal/express-engine/tokens'
+import {DOCUMENT, isPlatformBrowser} from '@angular/common'
+import {Request, Response} from 'express'
 
-import { ICookieService, ICookieServiceOption } from '@mean/shared/utils/interfaces';
+import { ICookieService, ICookieServiceOption } from '@mean/shared/utils/interfaces'
+
 
 @Injectable()
 export class BaseCookieService implements ICookieService {
 
-  private readonly isBrowser!: boolean;
+  private readonly isBrowser: boolean
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    @Inject(PLATFORM_ID) private platformId: Record<string, any>,
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    @Inject(PLATFORM_ID) private platformId: Object,
     @Inject(REQUEST) @Optional() private request: Request,
-    @Inject(RESPONSE) @Optional() private response: Response
+    @Inject(RESPONSE) @Optional() private response: Response,
   ) {
-    this.isBrowser = isPlatformBrowser(platformId);
+    this.isBrowser = isPlatformBrowser(platformId)
   }
 
   /**
    * Return cookie string from browser or ssr version
    */
   getCookieString(): string {
-    return this.isBrowser ? this.document.cookie : this.request.headers.cookie as string;
+    return this.isBrowser ? this.document.cookie : this.request.headers.cookie as string
   }
 
   check(name: string): boolean {
-    name = encodeURIComponent(name);
-    const regExp: RegExp = this.getCookieRegExp(name);
+    name = encodeURIComponent(name)
+    const regExp: RegExp = this.getCookieRegExp(name)
 
-    return regExp.test(this.getCookieString());
+    return regExp.test(this.getCookieString())
   }
 
   get(name: string): string {
     if (this.check(name)) {
-      name = encodeURIComponent(name);
-      const regExp: RegExp = this.getCookieRegExp(name);
-      const result = regExp.exec(this.getCookieString()) as RegExpExecArray;
-      return this.safeDecodeURIComponent(result[1]);
+      name = encodeURIComponent(name)
+      const regExp: RegExp = this.getCookieRegExp(name)
+      const result = regExp.exec(this.getCookieString()) as RegExpExecArray
+      return this.safeDecodeURIComponent(result[1])
     }
-    return '';
+    return ""
   }
 
   getAll(): { [p: string]: string } {
-    const cookies: { [key: string]: string } = {};
+    const cookies: { [key: string]: string } = {}
     if (this.getCookieString() && this.getCookieString() !== '') {
       this.getCookieString().split(';').forEach((currentCookie) => {
-        const [cookieName, cookieValue] = currentCookie.split('=');
-        cookies[this.safeDecodeURIComponent(cookieName.replace(/^ /, ''))] = this.safeDecodeURIComponent(cookieValue);
-      });
+        const [cookieName, cookieValue] = currentCookie.split('=')
+        cookies[this.safeDecodeURIComponent(cookieName.replace(/^ /, ''))] = this.safeDecodeURIComponent(cookieValue)
+      })
     }
-    return cookies;
+    return cookies
   }
 
-  put(name: string, value: string, options: Partial<ICookieServiceOption> = { sameSite: 'none', secure: true }): void {
-    let cookieString: string = encodeURIComponent(name) + '=' + encodeURIComponent(value) + ';';
+  put(name: string, value: string, options: Partial<ICookieServiceOption> = {sameSite: 'none', secure: true}): void {
+    let cookieString: string = encodeURIComponent(name) + '=' + encodeURIComponent(value) + ';'
     if (options.expires) {
-      cookieString += 'expires=' + options.expires.toUTCString() + ';';
+      cookieString += 'expires=' + options.expires.toUTCString() + ';'
+    }
 
-      if (options.path) {
-        cookieString += 'path=' + options.path + ';';
-      }
+    if (options.path) {
+      cookieString += 'path=' + options.path + ';'
+    }
 
-      if (options.domain) {
-        cookieString += 'domain=' + options.domain + ';';
-      }
+    if (options.domain) {
+      cookieString += 'domain=' + options.domain + ';'
+    }
 
-      if (options.secure === false && options.sameSite === 'none') {
-        options.secure = true;
-        console.warn(
-          `[ngx-cookie-service] Cookie ${name} was forced with secure flag because sameSite=None.` +
-          `More details : https://github.com/stevermeister/ngx-cookie-service/issues/86#issuecomment-597720130`
-        );
-      }
+    if (options.secure === false && options.sameSite === 'none') {
+      options.secure = true
+      console.warn(
+        `[ngx-cookie-service] Cookie ${name} was forced with secure flag because sameSite=None.` +
+        `More details : https://github.com/stevermeister/ngx-cookie-service/issues/86#issuecomment-597720130`,
+      )
+    }
 
-      if (options.secure) {
-        cookieString += 'secure;';
-      }
+    if (options.secure) {
+      cookieString += 'secure;'
+    }
 
-      if (options.sameSite) {
-        cookieString += 'sameSite=' + options.sameSite + ';';
-      }
+    if (options.sameSite) {
+      cookieString += 'sameSite=' + options.sameSite + ';'
+    }
 
-      if (this.isBrowser) {
-        this.document.cookie = cookieString;
-      } else {
-        this.request.headers.cookie = cookieString;
-      }
+    if (this.isBrowser) {
+      this.document.cookie = cookieString
+    } else {
+      this.request.headers.cookie = cookieString
     }
   }
 
   remove(name: string, path?: string, domain?: string): void {
     if (this.isBrowser) {
-      this.put(name, '', { path, domain, expires: new Date('Thu, 01 Jan 1970 00:00:01 GMT') });
+      this.put(name, '', {path, domain, expires: new Date('Thu, 01 Jan 1970 00:00:01 GMT')})
     } else {
-      this.response.clearCookie(name, { path, domain });
+      this.response.clearCookie(name, {path, domain})
     }
   }
 
   removeAll(path?: string, domain?: string): void {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const cookies: any = this.getAll();
+    const cookies: any = this.getAll()
 
     if (this.isBrowser) {
       for (const cookieName of Object.keys(cookies)) {
-        this.remove(cookieName, path, domain);
+        this.remove(cookieName, path, domain)
       }
     } else {
       for (const cookieName of Object.keys(cookies)) {
-        this.response.clearCookie(cookieName, { path, domain });
+        this.response.clearCookie(cookieName, {path, domain})
       }
     }
   }
@@ -120,17 +122,17 @@ export class BaseCookieService implements ICookieService {
    */
   protected getCookieRegExp(name: string): RegExp {
     // eslint-disable-next-line no-useless-escape
-    const escapedName: string = name.replace(/([\[\]\{\}\(\)\|\=\;\+\?\,\.\*\^\$])/gi, '\\$1');
+    const escapedName: string = name.replace(/([\[\]\{\}\(\)\|\=\;\+\?\,\.\*\^\$])/gi, '\\$1')
 
-    return new RegExp('(?:^' + escapedName + '|;\\s*' + escapedName + ')=(.*?)(?:;|$)', 'g');
+    return new RegExp('(?:^' + escapedName + '|;\\s*' + escapedName + ')=(.*?)(?:;|$)', 'g')
   }
 
   protected safeDecodeURIComponent(encodedURIComponent: string): string {
     try {
-      return decodeURIComponent(encodedURIComponent);
+      return decodeURIComponent(encodedURIComponent)
     } catch {
       // probably it is not uri encoded. return as is
-      return encodedURIComponent;
+      return encodedURIComponent
     }
   }
 

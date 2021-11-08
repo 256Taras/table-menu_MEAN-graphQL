@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-
 import { IMemoryStorage } from '@mean/shared/utils/interfaces';
+
 
 @Injectable()
 export class BaseMemoryStorage implements IMemoryStorage {

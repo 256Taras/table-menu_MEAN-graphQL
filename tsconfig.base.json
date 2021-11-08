@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@mean/frontend/shared/data-access/auth-store": [
+        "libs/frontend/shared/data-access/auth-store/src/index.ts"
+      ],
       "@mean/frontend/shared/data-access/root-store": [
         "libs/frontend/shared/data-access/root-store/src/index.ts"
       ],
