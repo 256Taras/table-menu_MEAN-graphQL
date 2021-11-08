@@ -1,7 +1,7 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { ISessionStorage } from '@mean/shared/utils/interfaces';
 
-import { storageAvailable } from '../utils/storage.utils';
+import { storageAvailable } from '../utils/storage.util';
 import { BaseMemoryStorage } from './base-memory.storage';
 
 
