@@ -21,7 +21,7 @@ import { UserApolloService } from './services/user-apollo.service';
   ],
 })
 export class UsersStoreModule {
-  static forRoot(options: IUserStoreOptions ): ModuleWithProviders<UsersStoreModule> {
+  static forRoot(options: Partial<IUserStoreOptions> = {} ): ModuleWithProviders<UsersStoreModule> {
     return {
       ngModule: UsersStoreModule,
       providers: [

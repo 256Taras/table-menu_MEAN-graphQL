@@ -1,4 +1,5 @@
 import { ApolloError } from '@apollo/client';
+import {Injectable} from '@angular/core'
 import { catchError, map } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { Apollo } from 'apollo-angular';
@@ -9,6 +10,8 @@ import { IUserApollo } from '../interfaces/user-apollo.interface';
 
 import * as UserQueries from '../graphql/user.queries';
 
+
+@Injectable()
 export class UserApolloService implements IUserApollo {
   constructor(private readonly apollo: Apollo) {
   }
