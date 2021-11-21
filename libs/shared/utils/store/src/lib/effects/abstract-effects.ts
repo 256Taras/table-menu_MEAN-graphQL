@@ -29,13 +29,13 @@ export abstract class AbstractEffects<T> {
     error: Record<string, unknown> = {},
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     responseAction?: (payload?: any) => TypedAction<any>,
-    debug = false): Action | never {
+    debug = false): Action | never | void {
 
     if (debug) {
       console.log(error);
     }
 
-    if (responseAction()) {
+    if (typeof responseAction === 'function' && responseAction()) {
       return responseAction({ payload: error });
     }
   }

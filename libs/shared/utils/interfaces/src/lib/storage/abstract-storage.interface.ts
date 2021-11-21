@@ -10,7 +10,7 @@
 
 export abstract class IStorage implements Storage {
 
-  public readonly length: number;
+  public readonly length!: number;
 
   public abstract clear(): void
 
