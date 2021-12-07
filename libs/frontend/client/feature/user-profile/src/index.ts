@@ -1,1 +1,1 @@
-export * from './lib/frontend-client-feature-user-profile.module';
+export * from './lib/user-profile.module';
