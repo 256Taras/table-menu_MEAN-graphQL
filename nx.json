@@ -45,13 +45,13 @@
       "tags": ["scope:frontend-client", "type:app"]
     },
     "frontend-client-feature-auth": {
-      "tags": []
+      "tags": ["scope:frontend-client", "type:lib", "lib-type:feature"]
     },
     "frontend-client-feature-home": {
       "tags": ["scope:frontend-client", "type:lib", "lib-type:feature"]
     },
     "frontend-client-feature-user-profile": {
-      "tags": []
+      "tags": ["scope:frontend-client", "type:lib", "lib-type:feature"]
     },
     "frontend-shared-data-access-auth-store": {
       "tags": ["type:lib", "scope:shared", "lib-type:data-access"]

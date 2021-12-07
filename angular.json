@@ -392,6 +392,31 @@
         }
       }
     },
+    "frontend-client-feature-auth": {
+      "projectType": "library",
+      "root": "libs/frontend/client/feature/auth",
+      "sourceRoot": "libs/frontend/client/feature/auth/src",
+      "prefix": "mean",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/frontend/client/feature/auth"],
+          "options": {
+            "jestConfig": "libs/frontend/client/feature/auth/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/frontend/client/feature/auth/src/**/*.ts",
+              "libs/frontend/client/feature/auth/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "frontend-client-feature-home": {
       "projectType": "library",
       "root": "libs/frontend/client/feature/home",
