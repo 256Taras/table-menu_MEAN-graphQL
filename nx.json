@@ -44,6 +44,9 @@
     "frontend-client": {
       "tags": ["scope:frontend-client", "type:app"]
     },
+    "frontend-client-feature-auth": {
+      "tags": []
+    },
     "frontend-client-feature-home": {
       "tags": ["scope:frontend-client", "type:lib", "lib-type:feature"]
     },

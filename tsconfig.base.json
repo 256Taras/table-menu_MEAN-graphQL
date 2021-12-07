@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@mean/frontend/client/feature/auth": [
+        "libs/frontend/client/feature/auth/src/index.ts"
+      ],
       "@mean/frontend/client/feature/home": [
         "libs/frontend/client/feature/home/src/index.ts"
       ],
