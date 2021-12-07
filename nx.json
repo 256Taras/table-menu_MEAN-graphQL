@@ -47,6 +47,9 @@
     "frontend-client-feature-home": {
       "tags": ["scope:frontend-client", "type:lib", "lib-type:feature"]
     },
+    "frontend-client-feature-user-profile": {
+      "tags": []
+    },
     "frontend-shared-data-access-auth-store": {
       "tags": ["type:lib", "scope:shared", "lib-type:data-access"]
     },

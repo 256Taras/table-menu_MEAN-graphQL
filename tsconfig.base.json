@@ -18,6 +18,9 @@
       "@mean/frontend/client/feature/home": [
         "libs/frontend/client/feature/home/src/index.ts"
       ],
+      "@mean/frontend/client/feature/user-profile": [
+        "libs/frontend/client/feature/user-profile/src/index.ts"
+      ],
       "@mean/frontend/shared/data-access/auth-store": [
         "libs/frontend/shared/data-access/auth-store/src/index.ts"
       ],

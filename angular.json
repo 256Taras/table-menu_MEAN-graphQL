@@ -417,6 +417,31 @@
         }
       }
     },
+    "frontend-client-feature-user-profile": {
+      "projectType": "library",
+      "root": "libs/frontend/client/feature/user-profile",
+      "sourceRoot": "libs/frontend/client/feature/user-profile/src",
+      "prefix": "mean",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/frontend/client/feature/user-profile"],
+          "options": {
+            "jestConfig": "libs/frontend/client/feature/user-profile/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/frontend/client/feature/user-profile/src/**/*.ts",
+              "libs/frontend/client/feature/user-profile/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "frontend-shared-data-access-auth-store": {
       "projectType": "library",
       "root": "libs/frontend/shared/data-access/auth-store",

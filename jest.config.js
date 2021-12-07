@@ -11,5 +11,6 @@ module.exports = {
     '<rootDir>/libs/shared/utils/storage',
     '<rootDir>/libs/frontend/shared/data-access/auth-store',
     '<rootDir>/libs/frontend/client/feature/home',
+    '<rootDir>/libs/frontend/client/feature/user-profile',
   ],
 };
