@@ -10,7 +10,8 @@ import { UsersStoreModule } from '@mean/frontend/shared/data-access/user-store';
   imports: [
     CommonModule,
     AuthStoreModule.forRoot(),
-    UsersStoreModule.forRoot()],
+    UsersStoreModule.forRoot(),
+  ],
   declarations: [
     ...homeContainers
   ],

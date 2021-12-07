@@ -1,14 +1,15 @@
+import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { catchError, map } from 'rxjs/operators';
 import { ApolloError } from '@apollo/client';
+
 import { throwError } from 'rxjs';
 
 import { ExtractApolloResponse, ISignAuthResponse, IUser, TApolloResponse } from '@mean/shared/utils/interfaces';
-
 import { IAuthApollo } from '../interfaces/auth-apollo.interface';
 import * as AuthQueries from '../graphql/auth.queries';
 
-
+@Injectable()
 export class BaseAuthApolloService implements IAuthApollo {
 
   constructor(private readonly apollo: Apollo) {
@@ -31,5 +32,4 @@ export class BaseAuthApolloService implements IAuthApollo {
         catchError((error: ApolloError) => throwError(error))
       );
   }
-
 }

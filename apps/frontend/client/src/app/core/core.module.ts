@@ -16,7 +16,7 @@ import { createApollo } from './utils/create-apollo';
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    NxModule,
+    NxModule.forRoot(),
     RootStoreModule,
     HomeModule,
     EffectsModule.forRoot([]),
