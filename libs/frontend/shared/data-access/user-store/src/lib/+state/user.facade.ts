@@ -38,7 +38,7 @@ export class UserFacade implements IUserFacade {
    * init(dispatch) action userLoad
    * @param force
    */
-  loafUser(force?: boolean): void {
+  loadUser(force?: boolean): void {
     this.store.dispatch(UserAction.loadUser({ payload: { force } }));
   }
 

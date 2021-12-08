@@ -27,5 +27,5 @@ export abstract class IUserFacade {
    * Load user action(dispatch)
    * @param force Force
    */
-  public abstract loafUser(force?: boolean): void;
+  public abstract loadUser(force?: boolean): void;
 }
