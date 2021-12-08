@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { homeContainers } from './home.common';
-
-import { AuthStoreModule } from '@mean/frontend/shared/data-access/auth-store';
-import { UsersStoreModule } from '@mean/frontend/shared/data-access/user-store';
+import { homeContainers, homeRoutes } from './home.common';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
-    AuthStoreModule.forRoot(),
-    UsersStoreModule.forRoot(),
+    RouterModule.forChild(homeRoutes)
   ],
   declarations: [
     ...homeContainers

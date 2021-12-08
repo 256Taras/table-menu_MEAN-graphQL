@@ -7,26 +7,27 @@ import { HttpLink } from 'apollo-angular/http';
 
 import { RootStoreModule } from '@mean/frontend/shared/data-access/root-store';
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
-import { HomeModule } from '@mean/frontend/client/feature/home';
 
-import { AppComponent } from './comonents/app/app.component';
 import { createApollo } from './utils/create-apollo';
+import { coreContainers, coreRoutes } from './core.common';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [...coreContainers],
   imports: [
     NxModule.forRoot(),
     RootStoreModule,
-    HomeModule,
     EffectsModule.forRoot([]),
-    RouterModule.forRoot([], { initialNavigation: 'enabled' })
+    RouterModule.forRoot(coreRoutes, {
+      initialNavigation: 'enabled',
+      scrollPositionRestoration: 'enabled',
+    })
   ],
   providers: [
     {
       provide: APOLLO_OPTIONS,
       useFactory: createApollo,
-      deps: [HttpLink]
+      deps: [HttpLink],
     }
   ]
 })
