@@ -62,6 +62,9 @@
     "frontend-shared-data-access-user-store": {
       "tags": ["type:lib", "scope:shared", "lib-type:data-access"]
     },
+    "frontend-ui-components": {
+      "tags": []
+    },
     "shared-utils-interfaces": {
       "tags": ["type:lib", "scope:shared", "lib-type:utils"]
     },
