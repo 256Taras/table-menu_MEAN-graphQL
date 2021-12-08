@@ -12,6 +12,16 @@ export const homeRoutes: Routes = [
       {
         path: '',
         component: HomePageComponent
+      },
+      {
+        path: "auth",
+        // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
+        loadChildren: ()=> import("@mean/frontend/client/feature/auth").then(m =>m.AuthModule)
+      },
+      {
+        path: 'user-profile',
+        // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
+        loadChildren: ()=> import("@mean/frontend/client/feature/user-profile").then(m => m.UserProfileModule)
       }
     ]
   }
