@@ -56,6 +56,9 @@
     "frontend-client-ui-layout": {
       "tags": ["type:lib", "scope:frontend-client", "lib-type:ui"]
     },
+    "frontend-client-ui-login-form": {
+      "tags": []
+    },
     "frontend-client-ui-user-profile": {
       "tags": []
     },

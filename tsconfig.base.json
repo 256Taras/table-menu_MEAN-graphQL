@@ -27,6 +27,9 @@
       "@mean/frontend/client/ui/layout": [
         "libs/frontend/client/ui/layout/src/index.ts"
       ],
+      "@mean/frontend/client/ui/login-form": [
+        "libs/frontend/client/ui/login-form/src/index.ts"
+      ],
       "@mean/frontend/client/ui/user-profile": [
         "libs/frontend/client/ui/user-profile/src/index.ts"
       ],
