@@ -9,8 +9,12 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
-  ngOnInit(): void {
-    return
+  public ngOnInit(): void {
+    return;
+  }
+
+  public onLogin(loginPayload: { login: string, password: string }): void {
+    console.log('login in login block', loginPayload);
   }
 
 }

@@ -57,10 +57,10 @@
       "tags": ["type:lib", "scope:frontend-client", "lib-type:ui"]
     },
     "frontend-client-ui-login-form": {
-      "tags": []
+      "tags": ["type:lib", "scope:frontend-client", "lib-type:ui"]
     },
     "frontend-client-ui-user-profile": {
-      "tags": []
+      "tags": ["type:lib", "scope:frontend-client", "lib-type:ui"]
     },
     "frontend-shared-data-access-auth-store": {
       "tags": ["type:lib", "scope:shared", "lib-type:data-access"]
