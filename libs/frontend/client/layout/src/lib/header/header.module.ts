@@ -4,15 +4,9 @@ import { CommonModule } from '@angular/common';
 import { headerContainer } from './header.common';
 import { NavbarModule } from '../navbar/navbar.module';
 
-
 @NgModule({
-  imports: [
-    CommonModule,
-    NavbarModule
-  ],
+  imports: [CommonModule, NavbarModule],
   declarations: [...headerContainer],
-  exports:[
-    ...headerContainer
-  ]
+  exports: [...headerContainer],
 })
-export class HeaderModule { }
+export class HeaderModule {}

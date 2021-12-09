@@ -4,12 +4,10 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   selector: 'mean-header-ui',
   templateUrl: './header-ui.component.html',
   styleUrls: ['./header-ui.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderUiComponent implements OnInit {
-
   ngOnInit(): void {
     return;
   }
-
 }

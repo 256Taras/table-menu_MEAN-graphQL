@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { ComponentType } from '@angular/cdk/overlay';
 
 import { HomePageComponent } from './home-page/home-page.component';
-import { BaseLayoutUiComponent } from '@mean/frontend/ui/components';
+import { BaseLayoutUiComponent } from '@mean/frontend/client/layout';
 
 export const homeRoutes: Routes = [
   {
@@ -11,20 +11,28 @@ export const homeRoutes: Routes = [
     children: [
       {
         path: '',
-        component: HomePageComponent
+        component: HomePageComponent,
       },
       {
-        path: "auth",
+        path: 'auth',
         // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
-        loadChildren: ()=> import("@mean/frontend/client/feature/auth").then(m =>m.AuthModule)
+        loadChildren: () =>
+          import('@mean/frontend/client/feature/auth').then(
+            (m) => m.AuthModule
+          ),
       },
       {
         path: 'user-profile',
         // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
-        loadChildren: ()=> import("@mean/frontend/client/feature/user-profile").then(m => m.UserProfileModule)
-      }
-    ]
-  }
+        loadChildren: () =>
+          import('@mean/frontend/client/feature/user-profile').then(
+            (m) => m.UserProfileModule
+          ),
+      },
+    ],
+  },
 ];
 
-export const homeContainers: ComponentType<HomePageComponent>[] = [HomePageComponent];
+export const homeContainers: ComponentType<HomePageComponent>[] = [
+  HomePageComponent,
+];

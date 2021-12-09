@@ -53,6 +53,9 @@
     "frontend-client-feature-user-profile": {
       "tags": ["scope:frontend-client", "type:lib", "lib-type:feature"]
     },
+    "frontend-client-layout": {
+      "tags": ["type:lib", "scope:frontend-client", "lib-type:ui"]
+    },
     "frontend-shared-data-access-auth-store": {
       "tags": ["type:lib", "scope:shared", "lib-type:data-access"]
     },
@@ -61,9 +64,6 @@
     },
     "frontend-shared-data-access-user-store": {
       "tags": ["type:lib", "scope:shared", "lib-type:data-access"]
-    },
-    "frontend-ui-components": {
-      "tags": []
     },
     "shared-utils-interfaces": {
       "tags": ["type:lib", "scope:shared", "lib-type:utils"]

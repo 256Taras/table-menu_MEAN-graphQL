@@ -5,19 +5,9 @@ import { RouterModule } from '@angular/router';
 import { baseLayoutContainers } from '../base-layout.common';
 import { HeaderModule } from '../header/header.module';
 
-
-
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-    HeaderModule
-  ],
-  declarations: [
-    ...baseLayoutContainers,
-  ],
-  exports:[
-    ...baseLayoutContainers,
-  ]
+  imports: [CommonModule, RouterModule, HeaderModule],
+  declarations: [...baseLayoutContainers],
+  exports: [...baseLayoutContainers],
 })
-export class BaseLayoutModule { }
+export class BaseLayoutModule {}
