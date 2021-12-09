@@ -8,9 +8,9 @@ import { IUsersFacade } from '@mean/frontend/shared/data-access/user-store';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserProfileComponent {
-  user$ = this.userFacade.user$;
+  public user$ = this.userFacade.user$;
 
-  constructor(private userFacade: IUsersFacade) {
+  constructor(public userFacade: IUsersFacade) {
     this.userFacade.loadUser();
   }
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { IUser } from '@mean/shared/utils/interfaces';
+import { ApolloError } from '@apollo/client/core';
 
 @Component({
   selector: 'mean-user-profile-ui',
@@ -6,10 +8,12 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./user-profile-ui.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class UserProfileUiComponent implements OnInit {
+export class UserProfileUiComponent {
 
-  ngOnInit(): void {
-    return;
-  }
+  @Input()
+  user!: IUser;
+
+  @Input()
+  failure!: ApolloError;
 
 }

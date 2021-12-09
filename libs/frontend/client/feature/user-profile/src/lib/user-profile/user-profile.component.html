@@ -1,1 +1,16 @@
-<mean-user-profile-ui></mean-user-profile-ui>
+<ng-container
+*ngTemplateOutlet="
+userInfo,
+context : {
+ user$: userFacade.user$ | async,
+ failure$: userFacade.userLoadFailure$ | async
+}"
+>
+</ng-container>
+
+<ng-template
+#userInfo let-user="user$" let-failure="failure$"
+>
+  <mean-user-profile-ui></mean-user-profile-ui>
+</ng-template>
+
