@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { navbarContainer } from './navbar.common';
 import { RouterModule } from '@angular/router';
+
+import { baseLayoutContainers } from './layout.common';
 
 @NgModule({
   imports: [CommonModule, RouterModule],
-  declarations: [...navbarContainer],
-  exports: [...navbarContainer],
+  declarations: [...baseLayoutContainers],
+  exports: [...baseLayoutContainers],
 })
-export class NavbarModule {}
+export class LayoutModule {}

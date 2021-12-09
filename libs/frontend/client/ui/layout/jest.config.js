@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'frontend-client-layout',
-  preset: '../../../../jest.preset.js',
+  displayName: 'frontend-client-ui-layout',
+  preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../../coverage/libs/frontend/client/layout',
+  coverageDirectory: '../../../../../coverage/libs/frontend/client/ui/layout',
   transform: {
     '^.+\\.(ts|js|html)$': 'jest-preset-angular',
   },

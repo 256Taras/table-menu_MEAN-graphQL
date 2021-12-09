@@ -2,7 +2,10 @@ import { Routes } from '@angular/router';
 import { ComponentType } from '@angular/cdk/overlay';
 
 import { HomePageComponent } from './home-page/home-page.component';
-import { BaseLayoutUiComponent } from '@mean/frontend/client/layout';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
+import { BaseLayoutUiComponent } from '@mean/frontend/client/ui/layout';
 
 export const homeRoutes: Routes = [
   {
@@ -15,16 +18,16 @@ export const homeRoutes: Routes = [
       },
       {
         path: 'auth',
-        // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
         loadChildren: () =>
+          // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
           import('@mean/frontend/client/feature/auth').then(
             (m) => m.AuthModule
           ),
       },
       {
         path: 'user-profile',
-        // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
         loadChildren: () =>
+          // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
           import('@mean/frontend/client/feature/user-profile').then(
             (m) => m.UserProfileModule
           ),
