@@ -8,8 +8,6 @@ import { IUsersFacade } from '@mean/frontend/shared/data-access/user-store';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserProfileComponent {
-  public user$ = this.userFacade.user$;
-
   constructor(public userFacade: IUsersFacade) {
     this.userFacade.loadUser();
   }

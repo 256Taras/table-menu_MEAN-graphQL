@@ -11,6 +11,9 @@ context : {
 <ng-template
 #userInfo let-user="user$" let-failure="failure$"
 >
-  <mean-user-profile-ui></mean-user-profile-ui>
+  <mean-user-profile-ui
+  [failure]='failure'
+  [user]='user'
+  ></mean-user-profile-ui>
 </ng-template>
 

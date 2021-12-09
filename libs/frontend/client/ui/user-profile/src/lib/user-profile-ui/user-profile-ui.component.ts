@@ -1,6 +1,8 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { IUser } from '@mean/shared/utils/interfaces';
 import { ApolloError } from '@apollo/client/core';
+
+import { IUser, Nullable } from '@mean/shared/utils/interfaces';
+
 
 @Component({
   selector: 'mean-user-profile-ui',
@@ -11,9 +13,10 @@ import { ApolloError } from '@apollo/client/core';
 export class UserProfileUiComponent {
 
   @Input()
-  user!: IUser;
+  user: Nullable<IUser>;
 
   @Input()
-  failure!: ApolloError;
+  failure: Nullable<ApolloError>;
+
 
 }

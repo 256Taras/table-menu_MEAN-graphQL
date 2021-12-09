@@ -1,9 +1,9 @@
 <ng-container *ngIf="failure">
-  <p *ngIf="failure.message === 'Unauthorized'">Авторизуйтесь будь ласка</p>
+  <p *ngIf="failure?.message === 'Unauthorized'">Авторизуйтесь будь ласка</p>
 </ng-container>
 
-<ng-container>
+<ng-container *ngIf="user">
   <p>
-    Вітаємо {{user.username}}!!!
+    Вітаємо {{user?.username}}!!!
   </p>
 </ng-container>
