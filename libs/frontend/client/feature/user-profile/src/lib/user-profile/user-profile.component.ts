@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { IUserFacade } from '@mean/frontend/shared/data-access/user-store';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { IUsersFacade } from '@mean/frontend/shared/data-access/user-store';
 
 @Component({
   selector: 'mean-user-profile',
@@ -7,12 +7,10 @@ import { IUserFacade } from '@mean/frontend/shared/data-access/user-store';
   styleUrls: ['./user-profile.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class UserProfileComponent implements OnInit {
-  constructor(private userFacade: IUserFacade) {
-  }
+export class UserProfileComponent {
+  user$ = this.userFacade.user$;
 
-  ngOnInit(): void {
-    this.userFacade.loadUser()
+  constructor(private userFacade: IUsersFacade) {
+    this.userFacade.loadUser();
   }
-
 }

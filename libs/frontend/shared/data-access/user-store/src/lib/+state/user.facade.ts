@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { ApolloError } from '@apollo/client';
 import { IUser } from '@mean/shared/utils/interfaces';
 
-import { IUserFacade } from '../interfaces/user-facade.interface';
+import { IUsersFacade } from '../interfaces/user-facade.interface';
 import { IUserStoreFeatureKey } from '../interfaces/user.store.feature-key.interface';
 
 import * as UserSelectors from './user.selectors';
@@ -15,7 +15,7 @@ import * as UserAction from './user.actions';
  * User store facade
  */
 @Injectable()
-export class UserFacade implements IUserFacade {
+export class UsersFacade implements IUsersFacade {
 
   /**
    * get user entity

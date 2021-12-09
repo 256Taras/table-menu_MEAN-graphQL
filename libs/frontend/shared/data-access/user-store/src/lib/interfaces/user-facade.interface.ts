@@ -6,7 +6,7 @@ import { IUser } from '@mean/shared/utils/interfaces';
 /**
  * User facade
  */
-export abstract class IUserFacade {
+export abstract class IUsersFacade {
 
   /**
    *  User entity observer

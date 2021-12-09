@@ -27,6 +27,9 @@
       "@mean/frontend/client/ui/layout": [
         "libs/frontend/client/ui/layout/src/index.ts"
       ],
+      "@mean/frontend/client/ui/user-profile": [
+        "libs/frontend/client/ui/user-profile/src/index.ts"
+      ],
       "@mean/frontend/shared/data-access/auth-store": [
         "libs/frontend/shared/data-access/auth-store/src/index.ts"
       ],
@@ -35,9 +38,6 @@
       ],
       "@mean/frontend/shared/data-access/user-store": [
         "libs/frontend/shared/data-access/user-store/src/index.ts"
-      ],
-      "@mean/frontend/ui/user-profile": [
-        "libs/frontend/ui/user-profile/src/index.ts"
       ],
       "@mean/shared/utils/interfaces": [
         "libs/shared/utils/interfaces/src/index.ts"
