@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ISignAuthPayload } from '@mean/shared/utils/interfaces';
 
 @Component({
   selector: 'mean-auth',
@@ -13,7 +14,7 @@ export class AuthComponent implements OnInit {
     return;
   }
 
-  public onLogin(loginPayload: { login: string, password: string }): void {
+  public onLogin(loginPayload: ISignAuthPayload): void {
     console.log('login in login block', loginPayload);
   }
 

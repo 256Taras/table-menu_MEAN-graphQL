@@ -12,6 +12,8 @@ import { IAuthStoreOptions } from './interfaces/auth-store-option.interface';
 import { IAuthStorage } from './interfaces/auth-storage.interface';
 import { IAuthApollo } from './interfaces/auth-apollo.interface';
 import { BaseAuthApolloService } from './services/base-auth-apollo.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   imports: [
@@ -26,6 +28,11 @@ export class AuthStoreModule {
     return {
       ngModule: AuthStoreModule,
       providers: [
+        {
+          provide: HTTP_INTERCEPTORS,
+          useClass: AuthInterceptor,
+          multi: true
+        },
         {
           provide: IAuthStorage,
           useClass: options.storage || BaseAuthStorageService
