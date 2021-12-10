@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { ApolloError } from '@apollo/client';
 
-import { ISignAuthPayload } from '@mean/shared/utils/interfaces';
+import { ISignAuthPayload, Nullable } from '@mean/shared/utils/interfaces';
 
 /**
  * Auth facade interface
@@ -10,7 +10,7 @@ export abstract class IAuthFacade {
   /**
    * SignIn observer
    */
-  public signIn$!: Observable<ISignAuthPayload>;
+  public signIn$!: Observable<Nullable<ISignAuthPayload>>;
 
   /**
    * SignInRun status observer
@@ -20,7 +20,7 @@ export abstract class IAuthFacade {
   /**
    * SignInError observer
    */
-  public signInError$!: Observable<ApolloError>;
+  public signInError$!: Observable<Nullable<ApolloError>>;
 
   /**
    * SignOut status observer
@@ -30,7 +30,7 @@ export abstract class IAuthFacade {
   /**
    * SignOut error observer
    */
-  public signOutError$!: Observable<ApolloError>;
+  public signOutError$!: Observable<Nullable<ApolloError>>;
 
   /**
    * Sign in
