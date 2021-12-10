@@ -1,7 +1,7 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 
-import { ISignAuthResponse, ISingAuth } from '@mean/shared/utils/interfaces';
+import { ISignAuthPayload, ISignAuthResponse } from '@mean/shared/utils/interfaces';
 import { UserService } from '../../users/services/user.service';
 import { PasswordService } from './password.service';
 import { UserEntity } from '../../users/entities/user.entity';
@@ -32,7 +32,7 @@ export class AuthService {
 
   }
 
-  public async login(signInPayload: ISingAuth): Promise<ISignAuthResponse> {
+  public async login(signInPayload: ISignAuthPayload): Promise<ISignAuthResponse> {
     const user = await this.validateUser(signInPayload.username, signInPayload.password);
     if (!user) {
       throw new UnauthorizedException();

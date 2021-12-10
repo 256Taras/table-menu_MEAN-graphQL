@@ -12,7 +12,7 @@ export abstract class IAuthApollo {
    * @param payload
    * @param queryParams
    */
-  public abstract signIn(payload:ISignAuthResponse, queryParams?:Record<string, unknown>):TApolloResponse<ISignAuthResponse>
+  public abstract signIn(payload: ISignAuthResponse, queryParams?: Record<string, unknown>): TApolloResponse<ISignAuthResponse>
 
   /**
    *
@@ -20,6 +20,6 @@ export abstract class IAuthApollo {
    *
    * @param queryParams
    */
-  public abstract signOut(queryParams?:Record<string, unknown>):TApolloResponse<void>
+  public abstract signOut(queryParams?: Record<string, unknown>): TApolloResponse<void>
 
 }

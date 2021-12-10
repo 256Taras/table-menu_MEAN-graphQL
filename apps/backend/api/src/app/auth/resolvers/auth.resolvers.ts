@@ -4,8 +4,8 @@ import { AuthService } from '../services/auth.service';
 import { SingIn } from '../decorators/auth.decorator';
 
 import type {
+  ISignAuthPayload,
   ISignAuthResponse,
-  ISingAuth,
 } from '@mean/shared/utils/interfaces';
 
 @Resolver('Auth')
@@ -14,7 +14,7 @@ export class AuthResolvers {
 
   @Query('login')
   public async login(
-    @SingIn() signInPayload: ISingAuth
+    @SingIn() signInPayload: ISignAuthPayload
   ): Promise<ISignAuthResponse> {
     return this.authService.login(signInPayload);
   }

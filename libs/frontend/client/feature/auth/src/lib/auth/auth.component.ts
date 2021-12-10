@@ -18,9 +18,9 @@ export class AuthComponent implements OnInit {
   constructor(public authFacade: IAuthFacade) {
   }
 
-  public onLogin(loginPayload: ISignAuthPayload): void {
-    console.log('login in login block', loginPayload)
-    this.authFacade.signInSet(loginPayload)
-    // this.authFacade.signIn()
+  public onLogin(loginPayload: any): void {
+
+    this.authFacade.signInSet({username: loginPayload.login, password: loginPayload.password})
+     this.authFacade.signIn()
   }
 }
