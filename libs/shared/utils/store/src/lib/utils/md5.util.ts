@@ -2,6 +2,8 @@
  * For more information
  * @see https://github.com/killmenot/webtoolkit.md5/blob/master/md5.js
  */
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 
 /* eslint-disable prefer-const,@typescript-eslint/no-array-constructor */
 export const md5 = string => {
