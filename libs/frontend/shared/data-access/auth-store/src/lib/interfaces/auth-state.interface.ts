@@ -1,5 +1,5 @@
 import { ApolloError } from '@apollo/client';
-import { ISignAuthPayload } from '@mean/shared/utils/interfaces';
+import { ISignAuthPayload, Nullable } from '@mean/shared/utils/interfaces';
 
 /**
  * Login-logout auth interface
@@ -9,7 +9,7 @@ export interface IAuthState {
   /**
    * Login action data
    */
-  signIn: ISignAuthPayload;
+  signIn: Nullable<ISignAuthPayload>;
 
   /**
    * Login action status
@@ -19,7 +19,7 @@ export interface IAuthState {
   /**
    * Login action error
    */
-  signInError: ApolloError;
+  signInError: Nullable<ApolloError>;
 
   /**
    * Logout action status
@@ -29,5 +29,5 @@ export interface IAuthState {
   /**
    * Logout action error
    */
-  signOutError: ApolloError;
+  signOutError: Nullable<ApolloError>;
 }
