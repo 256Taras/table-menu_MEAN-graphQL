@@ -6,6 +6,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 // @ts-ignore
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { BaseLayoutUiComponent } from '@mean/frontend/client/ui/layout';
+// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
+import { AuthComponent } from '@mean/frontend/client/feature/auth';
 
 export const homeRoutes: Routes = [
   {
@@ -18,11 +20,7 @@ export const homeRoutes: Routes = [
       },
       {
         path: 'auth',
-        loadChildren: () =>
-          // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
-          import('@mean/frontend/client/feature/auth').then(
-            (m) => m.AuthModule
-          ),
+        component: AuthComponent
       },
       {
         path: 'user-profile',
