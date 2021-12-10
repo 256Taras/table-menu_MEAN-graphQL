@@ -26,8 +26,9 @@ export type TApolloResponse<// eslint-disable-next-line @typescript-eslint/no-ex
  * If entityKeys is not specified, result.data is returned, otherwise the element is taken by key
  * @constructor
  */
-export function ExtractApolloResponse<T = unknown>(result: ApolloQueryResult<T>, entityKeys?: string[]) {
-  const key = !entityKeys.length ? Object.keys(entityKeys) : entityKeys;
-
- return  key.length === 1 ? result.data[key[0]] : result.data;
+export function ExtractApolloResponse<T = any>(result: ApolloQueryResult<T>, entityKeys?: string[]) {
+  const key = !!entityKeys && !entityKeys.length ? Object.keys(entityKeys) : entityKeys;
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-ignore
+ return  key?.length === 1 ? result.data[key?.[0]] : result.data;
 }

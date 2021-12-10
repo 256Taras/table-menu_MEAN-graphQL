@@ -1,6 +1,12 @@
 import { Action } from '@ngrx/store';
 import { TypedAction } from '@ngrx/store/src/models';
 
+import { md5 } from '../utils/md5.util';
+
+
+/**
+ * Abstract effect
+ */
 export abstract class AbstractEffects<T> {
 
 
@@ -16,6 +22,17 @@ export abstract class AbstractEffects<T> {
     return state[key || this.key];
   }
 
+
+  /**
+   * Create id from payload
+   *
+   * @param payload
+   */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  public getEffectIdFromPayload(payload: any): string {
+    return md5(JSON.stringify(payload));
+  }
+
   /**
    *
    * @param action
@@ -29,13 +46,13 @@ export abstract class AbstractEffects<T> {
     error: Record<string, unknown> = {},
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     responseAction?: (payload?: any) => TypedAction<any>,
-    debug = false): Action | never {
+    debug = false): Action | never | void {
 
     if (debug) {
       console.log(error);
     }
 
-    if (responseAction()) {
+    if (typeof responseAction === 'function' && responseAction()) {
       return responseAction({ payload: error });
     }
   }

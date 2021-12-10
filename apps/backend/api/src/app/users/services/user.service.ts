@@ -1,36 +1,62 @@
-import {Injectable} from "@angular/core";
-import {Repository} from "typeorm";
-import {InjectRepository} from "@nestjs/typeorm";
+import {Injectable} from '@nestjs/common'
+import {InjectRepository} from '@nestjs/typeorm'
+import {Repository} from 'typeorm'
 
-import {UserEntity} from "../entities/user.entity";
+import {UserEntity} from '../entities/user.entity'
 
 
+/**
+ * UserService find or create user from userRepository
+ */
 @Injectable()
 export class UserService {
+  /**
+   * Inject into UserService: userRepository
+   *
+   * @param userRepository
+   */
   constructor(
     @InjectRepository(UserEntity)
-    private readonly userRepository: Repository<UserEntity>
+    private readonly userRepository: Repository<UserEntity>,
   ) {
   }
 
-  public async find(): Promise<UserEntity[]> {
+  /**
+   * Find all users from userRepository
+   */
+  async find(): Promise<UserEntity[]> {
     return await this.userRepository.find()
   }
 
-  public async findOneById(id:number): Promise<UserEntity> {
+  /**
+   * Find user by id from userRepository
+   *
+   * @param id
+   */
+  async findOneById(id: number): Promise<UserEntity> {
     return await (this.userRepository.findOne(id)) || null
   }
 
-  public async findOneByUserName(username: string): Promise<UserEntity> {
-    const user = await this.userRepository.find({username})
+  /**
+   * Find user by username from userRepository
+   *
+   * @param username
+   */
+  async findOneByUserName(username: string): Promise<UserEntity> {
+    const users = await this.userRepository.find({username})
 
-    return user.length === 1 ? user[0] : null
+    return users.length === 1 ? users[0] : null
   }
 
+  /**
+   * Create new user into userRepository
+   *
+   * @param user provides candidate of new user into userRepository
+   */
   async createUser(user: Partial<UserEntity>): Promise<UserEntity> {
     const newUser = await this.userRepository.create(user)
 
-    return this.userRepository.create(newUser)
+    return this.userRepository.save(newUser)
   }
 
 }

@@ -6,7 +6,7 @@ import { IUser } from '@mean/shared/utils/interfaces';
 /**
  * User facade
  */
-export abstract class IUserFacade {
+export abstract class IUsersFacade {
 
   /**
    *  User entity observer
@@ -27,5 +27,5 @@ export abstract class IUserFacade {
    * Load user action(dispatch)
    * @param force Force
    */
-  public abstract loafUser(force?: boolean): void;
+  public abstract loadUser(force?: boolean): void;
 }

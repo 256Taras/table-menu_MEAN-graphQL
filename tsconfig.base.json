@@ -15,6 +15,24 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@mean/frontend/client/feature/auth": [
+        "libs/frontend/client/feature/auth/src/index.ts"
+      ],
+      "@mean/frontend/client/feature/home": [
+        "libs/frontend/client/feature/home/src/index.ts"
+      ],
+      "@mean/frontend/client/feature/user-profile": [
+        "libs/frontend/client/feature/user-profile/src/index.ts"
+      ],
+      "@mean/frontend/client/ui/layout": [
+        "libs/frontend/client/ui/layout/src/index.ts"
+      ],
+      "@mean/frontend/client/ui/login-form": [
+        "libs/frontend/client/ui/login-form/src/index.ts"
+      ],
+      "@mean/frontend/client/ui/user-profile": [
+        "libs/frontend/client/ui/user-profile/src/index.ts"
+      ],
       "@mean/frontend/shared/data-access/auth-store": [
         "libs/frontend/shared/data-access/auth-store/src/index.ts"
       ],

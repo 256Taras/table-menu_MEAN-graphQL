@@ -4,12 +4,12 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
 import { IUserApollo } from './interfaces/user-apollo.interface';
-import { IUserFacade } from './interfaces/user-facade.interface';
+import { IUsersFacade } from './interfaces/user-facade.interface';
 import { IUserStoreOptions } from './interfaces/user-store-option.interface';
 
 import * as fromUser from './+state/user.reducer';
 import { UserEffects } from './+state/user.effects';
-import { UserFacade } from './+state/user.facade';
+import { UsersFacade } from './+state/user.facade';
 
 import { UserApolloService } from './services/user-apollo.service';
 
@@ -21,7 +21,7 @@ import { UserApolloService } from './services/user-apollo.service';
   ],
 })
 export class UsersStoreModule {
-  static forRoot(options: IUserStoreOptions ): ModuleWithProviders<UsersStoreModule> {
+  static forRoot(options: Partial<IUserStoreOptions> = {} ): ModuleWithProviders<UsersStoreModule> {
     return {
       ngModule: UsersStoreModule,
       providers: [
@@ -30,8 +30,8 @@ export class UsersStoreModule {
           useClass: options.apollo || UserApolloService,
         },
         {
-          provide: IUserFacade,
-          useClass: options.facade || UserFacade,
+          provide: IUsersFacade,
+          useClass: options.facade || UsersFacade,
         },
       ],
     }

@@ -44,6 +44,24 @@
     "frontend-client": {
       "tags": ["scope:frontend-client", "type:app"]
     },
+    "frontend-client-feature-auth": {
+      "tags": ["scope:frontend-client", "type:lib", "lib-type:feature"]
+    },
+    "frontend-client-feature-home": {
+      "tags": ["scope:frontend-client", "type:lib", "lib-type:feature"]
+    },
+    "frontend-client-feature-user-profile": {
+      "tags": ["scope:frontend-client", "type:lib", "lib-type:feature"]
+    },
+    "frontend-client-ui-layout": {
+      "tags": ["type:lib", "scope:frontend-client", "lib-type:ui"]
+    },
+    "frontend-client-ui-login-form": {
+      "tags": ["type:lib", "scope:frontend-client", "lib-type:ui"]
+    },
+    "frontend-client-ui-user-profile": {
+      "tags": ["type:lib", "scope:frontend-client", "lib-type:ui"]
+    },
     "frontend-shared-data-access-auth-store": {
       "tags": ["type:lib", "scope:shared", "lib-type:data-access"]
     },
@@ -57,7 +75,7 @@
       "tags": ["type:lib", "scope:shared", "lib-type:utils"]
     },
     "shared-utils-storage": {
-      "tags": []
+      "tags": ["type:lib", "scope:shared", "lib-type:utils"]
     },
     "shared-utils-store": {
       "tags": ["type:lib", "scope:shared", "lib-type:utils"]

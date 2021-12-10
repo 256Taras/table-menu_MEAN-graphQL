@@ -2,7 +2,7 @@ import {Inject, Injectable, PLATFORM_ID} from '@angular/core'
 import {isPlatformBrowser} from '@angular/common'
 
 import { ILocalStorage, IMemoryStorage } from '@mean/shared/utils/interfaces';
-import { storageAvailable } from '../utils/storage.utils';
+import { storageAvailable } from '../utils/storage.util';
 
 
 @Injectable()
