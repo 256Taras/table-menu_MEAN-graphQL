@@ -8,7 +8,7 @@ import { AuthEffects } from './+state/auth.effects';
 import { AuthFacade } from './+state/auth.facade';
 
 import { BaseAuthStorageService } from './services/base-auth-storage.service';
-import { IAuthStoreOption } from './interfaces/auth-store-option.interface';
+import { IAuthStoreOptions } from './interfaces/auth-store-option.interface';
 import { IAuthStorage } from './interfaces/auth-storage.interface';
 import { IAuthApollo } from './interfaces/auth-apollo.interface';
 import { BaseAuthApolloService } from './services/base-auth-apollo.service';
@@ -22,7 +22,7 @@ import { BaseAuthApolloService } from './services/base-auth-apollo.service';
   providers: [AuthFacade]
 })
 export class AuthStoreModule {
-  static forRoot(options: Partial<IAuthStoreOption> = {}): ModuleWithProviders<AuthStoreModule> {
+  static forRoot(options: Partial<IAuthStoreOptions> = {}): ModuleWithProviders<AuthStoreModule> {
     return {
       ngModule: AuthStoreModule,
       providers: [

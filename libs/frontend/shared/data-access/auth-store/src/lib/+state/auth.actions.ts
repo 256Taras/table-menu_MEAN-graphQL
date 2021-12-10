@@ -10,5 +10,5 @@ export const loadAuthSuccess = createAction(
 
 export const loadAuthFailure = createAction(
   '[Auth/API] Load Auth Failure',
-  props<{ error: unknown }>()
+  props<{ error: any }>()
 );

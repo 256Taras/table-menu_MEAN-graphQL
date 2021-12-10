@@ -1,5 +1,5 @@
-import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { createReducer, on, Action } from '@ngrx/store';
+import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 
 import * as AuthActions from './auth.actions';
 import { AuthEntity } from './auth.models';
@@ -16,14 +16,12 @@ export interface AuthPartialState {
   readonly [AUTH_FEATURE_KEY]: State;
 }
 
-export const authAdapter: EntityAdapter<AuthEntity> =
-  createEntityAdapter<AuthEntity>();
+export const authAdapter: EntityAdapter<AuthEntity> = createEntityAdapter<AuthEntity>();
 
 export const initialState: State = authAdapter.getInitialState({
   // set initial required properties
   loaded: false,
 });
-
 
 const authReducer = createReducer(
   initialState,
@@ -31,8 +29,6 @@ const authReducer = createReducer(
   on(AuthActions.loadAuthSuccess, (state, { auth }) =>
     authAdapter.setAll(auth, { ...state, loaded: true })
   ),
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
   on(AuthActions.loadAuthFailure, (state, { error }) => ({ ...state, error }))
 );
 

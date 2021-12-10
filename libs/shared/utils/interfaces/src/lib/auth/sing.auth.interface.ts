@@ -1,4 +1,4 @@
-export interface ISingAuth {
+export interface ISignAuthPayload {
   username: string;
   password: string;
 }
