@@ -4,7 +4,7 @@ import { ApolloError } from '@apollo/client';
 import { ISignAuthPayload } from '@mean/shared/utils/interfaces';
 
 /**
- * User facade interface
+ * Auth facade interface
  */
 export abstract class IAuthFacade {
   /**
