@@ -1,0 +1,30 @@
+<p>login-from-ui works!</p>
+
+<form
+  [formGroup]="loginForm"
+  (ngSubmit)="onSubmit()"
+>
+  <mat-form-field>
+    <input
+      formControlName="login"
+      matInput
+      required
+      placeholder="Введіь логін"
+    >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      formControlName="password"
+      matInput
+      required
+      placeholder="Введіть пароль"
+    >
+  </mat-form-field>
+
+  <button
+    type="submit"
+  >
+    Вхід
+  </button>
+</form>
