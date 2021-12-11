@@ -2064,6 +2064,13 @@
     tslib "2.2.0"
     uuid "8.3.2"
 
+"@nestjs/cqrs@^8.0.1":
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/@nestjs/cqrs/-/cqrs-8.0.1.tgz#43242aaa76d74b647682aa64135f7145b09b0cce"
+  integrity sha512-hjEMl9WOgp55SCDaI79lKqJD/GgW2ZqndQbIb6VfMeR7Ue7Rt25GGGQ3KkZ5i+TDvlTDSzco8wqmQ4x/PTsVMA==
+  dependencies:
+    uuid "8.3.2"
+
 "@nestjs/graphql@^7.11.0":
   version "7.11.0"
   resolved "https://registry.yarnpkg.com/@nestjs/graphql/-/graphql-7.11.0.tgz#5c2c93dddb1f85956f25dd81cc2df6c2e56d708b"
@@ -5770,6 +5777,11 @@ cssstyle@^2.3.0:
   integrity sha512-AZL67abkUzIuvcHqk7c09cezpGNcxUxU4Ioi/05xHk4DQeTkWmGYftIE6ctU6AEt+Gn4n1lDStOtj7FKycP71A==
   dependencies:
     cssom "~0.3.6"
+
+cuid@^2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/cuid/-/cuid-2.1.8.tgz#cbb88f954171e0d5747606c0139fb65c5101eac0"
+  integrity sha512-xiEMER6E7TlTPnDxrM4eRiC6TRgjNX9xzEZ5U/Se2YJKr7Mq4pJn/2XEHjl3STcSh96GmkHPcBXLES8M29wyyg==
 
 cyclist@^1.0.1:
   version "1.0.1"
