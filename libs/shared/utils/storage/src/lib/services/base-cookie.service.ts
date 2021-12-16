@@ -67,7 +67,7 @@ export class BaseCookieService implements ICookieService {
     }
 
     if (options.domain) {
-      cookieString += 'domain=' + options.domain + ';'
+      cookieString += 'entityes=' + options.domain + ';'
     }
 
     if (options.secure === false && options.sameSite === 'none') {

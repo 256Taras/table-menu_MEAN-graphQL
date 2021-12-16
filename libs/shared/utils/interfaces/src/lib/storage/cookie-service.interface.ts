@@ -42,7 +42,7 @@ export abstract class ICookieService {
    *
    * @param name   Cookie name
    * @param path   Cookie path
-   * @param domain Cookie domain
+   * @param domain Cookie entityes
    */
   abstract remove(
     name: string,
@@ -54,7 +54,7 @@ export abstract class ICookieService {
    * delete => original
    *
    * @param path   Cookie path
-   * @param domain Cookie domain
+   * @param domain Cookie entityes
    */
   abstract removeAll(
     path?: string,

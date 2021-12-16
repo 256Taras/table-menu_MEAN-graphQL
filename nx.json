@@ -34,6 +34,33 @@
     "backend-api": {
       "tags": ["type:app", "scope:backend-api", "type:app"]
     },
+    "backend-web-shared-feature-core": {
+      "tags": []
+    },
+    "backend-web-shared-utils-decorators": {
+      "tags": []
+    },
+    "backend-web-shared-utils-helpers-cryption": {
+      "tags": []
+    },
+    "backend-web-shared-utils-helpers-id-creator": {
+      "tags": []
+    },
+    "backend-web-shared-utils-interceptors-": {
+      "tags": []
+    },
+    "backend-web-users-data-access": {
+      "tags": []
+    },
+    "backend-web-users-feature": {
+      "tags": []
+    },
+    "backend-web-users-ui": {
+      "tags": []
+    },
+    "backend-web-users-utils": {
+      "tags": []
+    },
     "client-e2e": {
       "tags": [],
       "implicitDependencies": ["frontend-client"]

@@ -1,16 +1,18 @@
-import { Query, Resolver } from '@nestjs/graphql';
-
+import {  Query, Resolver } from '@nestjs/graphql';
 import { AuthService } from '../services/auth.service';
-import { SingIn } from '../decorators/auth.decorator';
 
+import { SingIn,  } from '../decorators/auth.decorators';
 import type {
   ISignAuthPayload,
-  ISignAuthResponse,
+  ISignAuthResponse
 } from '@mean/shared/utils/interfaces';
 
 @Resolver('Auth')
 export class AuthResolvers {
-  constructor(private readonly authService: AuthService) {}
+  constructor(
+    private readonly authService: AuthService,
+  ) {
+  }
 
   @Query('login')
   public async login(
@@ -23,4 +25,6 @@ export class AuthResolvers {
   public async logout(): Promise<boolean> {
     return true;
   }
+
+
 }

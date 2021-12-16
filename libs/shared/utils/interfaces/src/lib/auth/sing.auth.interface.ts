@@ -7,3 +7,10 @@ export interface ISignAuthResponse {
   expiresIn: number;
   id: number;
 }
+
+export interface ISignUpPayload {
+    username: string,
+    email: string,
+    password: string,
+    passwordConfirm: string,
+}

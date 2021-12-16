@@ -15,6 +15,31 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@mean/backend/web/shared/feature/core": [
+        "libs/backend/web/shared/feature/core/src/index.ts"
+      ],
+      "@mean/backend/web/shared/utils/decorators": [
+        "libs/backend/web/shared/utils/decorators/src/index.ts"
+      ],
+      "@mean/backend/web/shared/utils/helpers/cryption": [
+        "libs/backend/web/shared/utils/helpers/cryption/src/index.ts"
+      ],
+      "@mean/backend/web/shared/utils/helpers/id-creator": [
+        "libs/backend/web/shared/utils/helpers/id-creator/src/index.ts"
+      ],
+      "@mean/backend/web/shared/utils/interceptors/": [
+        "libs/backend/web/shared/utils/interceptors/src/index.ts"
+      ],
+      "@mean/backend/web/users/data-access": [
+        "libs/backend/web/users/data-access/src/index.ts"
+      ],
+      "@mean/backend/web/users/feature": [
+        "libs/backend/web/users/feature/src/index.ts"
+      ],
+      "@mean/backend/web/users/ui": ["libs/backend/web/users/ui/src/index.ts"],
+      "@mean/backend/web/users/utils": [
+        "libs/backend/web/users/utils/src/index.ts"
+      ],
       "@mean/frontend/client/feature/auth": [
         "libs/frontend/client/feature/auth/src/index.ts"
       ],

@@ -1,6 +1,6 @@
 /**
  * The Storage interface of the Web Storage API provides
- * access to a particular domain's session or local storage.
+ * access to a particular entityes's session or local storage.
  *
  * It allows, for example, the addition, modification,
  * or deletion of stored data items.

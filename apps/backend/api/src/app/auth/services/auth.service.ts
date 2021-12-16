@@ -2,10 +2,11 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 
 import { ISignAuthPayload, ISignAuthResponse } from '@mean/shared/utils/interfaces';
-import { UserService } from '../../users/services/user.service';
+
 import { PasswordService } from './password.service';
-import { UserEntity } from '../../users/entities/user.entity';
 import { environment } from '../../../environments/environment';
+import { OrmUserEntity } from '@mean/backend/web/users/data-access';
+import { UsersService } from '@mean/backend/web/users/feature';
 
 
 @Injectable()
@@ -13,12 +14,12 @@ export class AuthService {
 
   constructor(
     private readonly jwtService: JwtService,
-    private readonly userService: UserService,
+    private readonly userService: UsersService,
     private readonly passwordService: PasswordService
   ) {
   }
 
-  public async validateUser(username: string, password: string): Promise<Omit<UserEntity, 'password'>> {
+  public async validateUser(username: string, password: string): Promise<Omit<OrmUserEntity, 'password'>> {
     const user = await this.userService.findOneByUserName(username);
 
     const isValid = user ? await this.passwordService.compareHash(password, user.password) : null;

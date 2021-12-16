@@ -7,7 +7,7 @@ module.exports = {
   synchronize: true,
   logging: true,
   entities: [
-    'dist/apps/backend/api/src/migrations/*.entity.js', // where to find files entities when the script backend:api:entities is run
+    'dist/apps/backend/api/src/migrations/*.entity.js', // where to find files orm-entityes when the script backend:api:orm-entityes is run
   ],
   migrations: [
     'dist/apps/backend/api/src/migrations/*.js', // where to find files migrations when the script backend:api:migrations:run is run

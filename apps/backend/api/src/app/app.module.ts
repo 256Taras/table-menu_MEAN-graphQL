@@ -5,8 +5,10 @@ import {TypeOrmModule} from "@nestjs/typeorm";
 import {environment} from "../environments/environment";
 import {AppController} from './app.controller';
 import {AuthModule} from './auth/auth.module';
-import {UserEntity} from './users/entities/user.entity';
 import {resolverMap} from "./app.resolver";
+
+import { UsersUiModule } from '@mean/backend/web/users/ui';
+import { UserEntity } from '@mean/backend/web/users/feature';
 
 @Module({
   imports: [
@@ -15,12 +17,13 @@ import {resolverMap} from "./app.resolver";
       entities: [UserEntity],
     }),
     GraphQLModule.forRoot({
-      typePaths: ['./**/*.graphql'],
+      typePaths: ['./**/*.graphql', ],
       context: ({req}) => ({req}),
       playground: true,
       resolvers: [resolverMap],
     }),
     AuthModule,
+    UsersUiModule,
   ],
   controllers: [AppController],
 })
